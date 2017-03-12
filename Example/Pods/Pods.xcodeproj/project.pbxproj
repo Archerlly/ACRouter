@@ -7,16 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0213838CD2E0061ECA8C56169D9C6EF0 /* ACRouterParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB6C1930594255E538EF4378B30BD9A4 /* ACRouterParser.swift */; };
+		034EC21B8981B1D207A9A0F39FA27D71 /* ACRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A82078BD100313637C78DD5F6B7DB0 /* ACRouter.swift */; };
+		18318B542867F4A3B27C67F4562CB8D6 /* ACRouterRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE88EC988698FB4892777413DC06EE7 /* ACRouterRequest.swift */; };
 		2DBB084B79DAA7C506D8D8DD8208152A /* Pods-ACRouter_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5067E876CF012EDF877B34FBD936CA9D /* Pods-ACRouter_Tests-dummy.m */; };
-		62F9E3BAB7D93E60861AC99492A6DA35 /* ReplaceMe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56985B394FCE51F49B8CBCE7D6775C1F /* ReplaceMe.swift */; };
+		4036BFB2F7013B43F9FB2AA423A093AD /* ACRouter+Jump.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE31BB0AE22399681E0E8FEA8E55A773 /* ACRouter+Jump.swift */; };
+		4EE5B2B59448ADFB5DCB40C4EA1124AA /* ACRouter-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9272EF3D4EB4CF3ABE8C37430FD0C341 /* ACRouter-dummy.m */; };
+		60DA6EE3A93249B97E106BF0DDDA6A6E /* ReplaceMe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FDA0D82F9FD743BF4D2545734CB29BB /* ReplaceMe.swift */; };
+		62EECBF9B3D85BB52C98469F9D8751FF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
+		6BFD5B79979B311B3F53F4A8D8D1AD78 /* ACRouterPattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024277A1A8F8F863C467B649802DA768 /* ACRouterPattern.swift */; };
 		80E2FB9CF7DBFF7B93D5942FDAC17D77 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
 		831BB7200F4C8738F39E90F5FC951C6A /* Pods-ACRouter_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F3A08AF63A35E046A802A9AE14EE9D1 /* Pods-ACRouter_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		950A0B1BBD1C016BCA719897EB6BBD09 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
-		A3850E8A6D6AD68D0C5884F5BB161233 /* ACRouter-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F59AC3D75E7F215F12E09D72044AA911 /* ACRouter-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9E190E4A29B634C189334BA6C9EEA620 /* ACRouter-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F59AC3D75E7F215F12E09D72044AA911 /* ACRouter-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A7F0D7D69BFAF814D85F68BDC7FA6104 /* Pods-ACRouter_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 7C1C58F9F7EA34406E13B459D19D85D1 /* Pods-ACRouter_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B60F1B35D81B7A262197865CB44AA0C3 /* ACRouter-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9272EF3D4EB4CF3ABE8C37430FD0C341 /* ACRouter-dummy.m */; };
 		DB75712D24E8D3A3666F33CD3E146BEB /* Pods-ACRouter_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DAD79FED54A19013AC4C3FF08C38682 /* Pods-ACRouter_Example-dummy.m */; };
-		F7EFAD03CD1A777BF23A89D30269B866 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -24,12 +29,13 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 944CA83CA4C20C54C5B0424321BD3A7C;
+			remoteGlobalIDString = B6707658DDF2201CF86B03E4E4BC98E2;
 			remoteInfo = ACRouter;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		024277A1A8F8F863C467B649802DA768 /* ACRouterPattern.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ACRouterPattern.swift; sourceTree = "<group>"; };
 		045258A81B2E084A0354618473811F47 /* Pods-ACRouter_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ACRouter_Example-frameworks.sh"; sourceTree = "<group>"; };
 		0E3705A540E9DB03AB39ADF24D0B36F3 /* ACRouter.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = ACRouter.modulemap; sourceTree = "<group>"; };
 		1321A56EE262A3534DC96C4726ED90FE /* Pods-ACRouter_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ACRouter_Example.debug.xcconfig"; sourceTree = "<group>"; };
@@ -40,9 +46,9 @@
 		3E961B5F51C130B70E998FDAC5943C0E /* Pods-ACRouter_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ACRouter_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		470F2B5E8A8C0C74AE3BEBF610896935 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		479D0787F671D0CB84B4C005F5AA36FF /* Pods-ACRouter_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-ACRouter_Tests.modulemap"; sourceTree = "<group>"; };
+		4FDA0D82F9FD743BF4D2545734CB29BB /* ReplaceMe.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ReplaceMe.swift; sourceTree = "<group>"; };
 		5067E876CF012EDF877B34FBD936CA9D /* Pods-ACRouter_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ACRouter_Tests-dummy.m"; sourceTree = "<group>"; };
 		510A07C6E55ABC20AB85F394BEBF3924 /* ACRouter.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ACRouter.xcconfig; sourceTree = "<group>"; };
-		56985B394FCE51F49B8CBCE7D6775C1F /* ReplaceMe.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ReplaceMe.swift; sourceTree = "<group>"; };
 		6006091B99EE822AB2B700ACBBAB3D74 /* Pods-ACRouter_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ACRouter_Tests-resources.sh"; sourceTree = "<group>"; };
 		6FD7E18D52E8B6A1E6D46C99385E68D1 /* Pods-ACRouter_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ACRouter_Tests-frameworks.sh"; sourceTree = "<group>"; };
 		71A1EEBEBBA2DB0DBB7613A1F1EA7A00 /* Pods-ACRouter_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ACRouter_Example-resources.sh"; sourceTree = "<group>"; };
@@ -53,31 +59,35 @@
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9F3A08AF63A35E046A802A9AE14EE9D1 /* Pods-ACRouter_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-ACRouter_Example-umbrella.h"; sourceTree = "<group>"; };
 		AA4F7D252E56663F0FE98BCF470A4FDB /* Pods_ACRouter_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_ACRouter_Example.framework; path = "Pods-ACRouter_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BB6C1930594255E538EF4378B30BD9A4 /* ACRouterParser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ACRouterParser.swift; sourceTree = "<group>"; };
 		BF514A5E8B51D04FE8B4886D2D9E8EBD /* Pods-ACRouter_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ACRouter_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		C4DA4692694D779750E716BAA7BA8EEA /* Pods-ACRouter_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ACRouter_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		D0218E6C342566A2FB0A0196BD197291 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D0A82078BD100313637C78DD5F6B7DB0 /* ACRouter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ACRouter.swift; sourceTree = "<group>"; };
 		D11CF261FF9092D933BBCC405C0E4A4B /* Pods_ACRouter_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_ACRouter_Tests.framework; path = "Pods-ACRouter_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DE31BB0AE22399681E0E8FEA8E55A773 /* ACRouter+Jump.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "ACRouter+Jump.swift"; sourceTree = "<group>"; };
 		E60B144F05F4568EB8ACE4256CA22FEF /* Pods-ACRouter_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-ACRouter_Example.modulemap"; sourceTree = "<group>"; };
 		E83F9D5BBDCD3310DA9DF6E081AB06B0 /* Pods-ACRouter_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-ACRouter_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		F59AC3D75E7F215F12E09D72044AA911 /* ACRouter-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ACRouter-umbrella.h"; sourceTree = "<group>"; };
 		F5A9293BBABBF7081A62B2AB39AB9B05 /* ACRouter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = ACRouter.framework; path = ACRouter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FFE88EC988698FB4892777413DC06EE7 /* ACRouterRequest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ACRouterRequest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		53CE9087E00475265AAF59A3E1820EEE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				62EECBF9B3D85BB52C98469F9D8751FF /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B16A5EE698FC6CA349EDF30488D45674 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				80E2FB9CF7DBFF7B93D5942FDAC17D77 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E790C63C9E8044CA4844A1A990FD6A61 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				F7EFAD03CD1A777BF23A89D30269B866 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -110,15 +120,6 @@
 			path = "Target Support Files/Pods-ACRouter_Example";
 			sourceTree = "<group>";
 		};
-		159597144FAB1050FFC7D8ECBAC9EA25 /* ACRouter */ = {
-			isa = PBXGroup;
-			children = (
-				3862907681EB804C4230EA16675C5F37 /* Classes */,
-			);
-			name = ACRouter;
-			path = ACRouter;
-			sourceTree = "<group>";
-		};
 		191F8AC681C7F4730E38DAC304A83CC3 /* Pods-ACRouter_Tests */ = {
 			isa = PBXGroup;
 			children = (
@@ -137,19 +138,10 @@
 			path = "Target Support Files/Pods-ACRouter_Tests";
 			sourceTree = "<group>";
 		};
-		3862907681EB804C4230EA16675C5F37 /* Classes */ = {
-			isa = PBXGroup;
-			children = (
-				56985B394FCE51F49B8CBCE7D6775C1F /* ReplaceMe.swift */,
-			);
-			name = Classes;
-			path = Classes;
-			sourceTree = "<group>";
-		};
 		537E602F62A5D23C1B836566529CA42D /* ACRouter */ = {
 			isa = PBXGroup;
 			children = (
-				159597144FAB1050FFC7D8ECBAC9EA25 /* ACRouter */,
+				D7AEB44BFDF2DC1FE04A71FD6CC0C7E4 /* ACRouter */,
 				E7FE9DB5289B074CD58EC232998B16EB /* Support Files */,
 			);
 			name = ACRouter;
@@ -210,6 +202,29 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
+		C9182DEF556E639B90ADF1A1B3D4D77B /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				D0A82078BD100313637C78DD5F6B7DB0 /* ACRouter.swift */,
+				DE31BB0AE22399681E0E8FEA8E55A773 /* ACRouter+Jump.swift */,
+				BB6C1930594255E538EF4378B30BD9A4 /* ACRouterParser.swift */,
+				024277A1A8F8F863C467B649802DA768 /* ACRouterPattern.swift */,
+				FFE88EC988698FB4892777413DC06EE7 /* ACRouterRequest.swift */,
+				4FDA0D82F9FD743BF4D2545734CB29BB /* ReplaceMe.swift */,
+			);
+			name = Classes;
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		D7AEB44BFDF2DC1FE04A71FD6CC0C7E4 /* ACRouter */ = {
+			isa = PBXGroup;
+			children = (
+				C9182DEF556E639B90ADF1A1B3D4D77B /* Classes */,
+			);
+			name = ACRouter;
+			path = ACRouter;
+			sourceTree = "<group>";
+		};
 		E7FE9DB5289B074CD58EC232998B16EB /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -227,6 +242,14 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		23ABBFF136B5026FA962B7B9E43334EE /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9E190E4A29B634C189334BA6C9EEA620 /* ACRouter-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8B5E7F0EA4FEDD798EEDDBE6A6E395E1 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -240,14 +263,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				831BB7200F4C8738F39E90F5FC951C6A /* Pods-ACRouter_Example-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D43A704B88ED06ADB8DD1988FE57DA31 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A3850E8A6D6AD68D0C5884F5BB161233 /* ACRouter-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -289,13 +304,13 @@
 			productReference = AA4F7D252E56663F0FE98BCF470A4FDB /* Pods_ACRouter_Example.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		944CA83CA4C20C54C5B0424321BD3A7C /* ACRouter */ = {
+		B6707658DDF2201CF86B03E4E4BC98E2 /* ACRouter */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F8941359BE03088F4CA4259FDDD9586B /* Build configuration list for PBXNativeTarget "ACRouter" */;
+			buildConfigurationList = 62C6841F4F02092ABB8BF7D136136803 /* Build configuration list for PBXNativeTarget "ACRouter" */;
 			buildPhases = (
-				6D7BB60E11ABE76031979A7EB05D6897 /* Sources */,
-				E790C63C9E8044CA4844A1A990FD6A61 /* Frameworks */,
-				D43A704B88ED06ADB8DD1988FE57DA31 /* Headers */,
+				B7490D4CE6AA8712A6D6AA911D092B47 /* Sources */,
+				53CE9087E00475265AAF59A3E1820EEE /* Frameworks */,
+				23ABBFF136B5026FA962B7B9E43334EE /* Headers */,
 			);
 			buildRules = (
 			);
@@ -327,7 +342,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				944CA83CA4C20C54C5B0424321BD3A7C /* ACRouter */,
+				B6707658DDF2201CF86B03E4E4BC98E2 /* ACRouter */,
 				618C6FF2B0D7660F8B187A735AA041BF /* Pods-ACRouter_Example */,
 				1E8D9C2F2865B50A422B55CD7DEEFDFF /* Pods-ACRouter_Tests */,
 			);
@@ -335,15 +350,6 @@
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		6D7BB60E11ABE76031979A7EB05D6897 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				B60F1B35D81B7A262197865CB44AA0C3 /* ACRouter-dummy.m in Sources */,
-				62F9E3BAB7D93E60861AC99492A6DA35 /* ReplaceMe.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		6F0204D232E9AD2CB0BD0C12BF287D0D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -360,13 +366,27 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B7490D4CE6AA8712A6D6AA911D092B47 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4036BFB2F7013B43F9FB2AA423A093AD /* ACRouter+Jump.swift in Sources */,
+				4EE5B2B59448ADFB5DCB40C4EA1124AA /* ACRouter-dummy.m in Sources */,
+				034EC21B8981B1D207A9A0F39FA27D71 /* ACRouter.swift in Sources */,
+				0213838CD2E0061ECA8C56169D9C6EF0 /* ACRouterParser.swift in Sources */,
+				6BFD5B79979B311B3F53F4A8D8D1AD78 /* ACRouterPattern.swift in Sources */,
+				18318B542867F4A3B27C67F4562CB8D6 /* ACRouterRequest.swift in Sources */,
+				60DA6EE3A93249B97E106BF0DDDA6A6E /* ReplaceMe.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
 		C2540283AC07781B4600E41655B5BE01 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = ACRouter;
-			target = 944CA83CA4C20C54C5B0424321BD3A7C /* ACRouter */;
+			target = B6707658DDF2201CF86B03E4E4BC98E2 /* ACRouter */;
 			targetProxy = 74BDCC2760AFEA388A1F77DE93A7980A /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -407,6 +427,39 @@
 			};
 			name = Debug;
 		};
+		4B5728F41258BBABB6A07FDBE43C803C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 510A07C6E55ABC20AB85F394BEBF3924 /* ACRouter.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/ACRouter/ACRouter-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/ACRouter/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/ACRouter/ACRouter.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = ACRouter;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 		4D935F490A2AE3F3D5CACA6D8DCBD555 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 730507DDB2D4DD817890CDB67E5C4D64 /* Pods-ACRouter_Example.release.xcconfig */;
@@ -436,38 +489,6 @@
 				PRODUCT_NAME = Pods_ACRouter_Example;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		6B724EC6AF2816C280C27E7481D5B537 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 510A07C6E55ABC20AB85F394BEBF3924 /* ACRouter.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/ACRouter/ACRouter-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/ACRouter/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/ACRouter/ACRouter.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = ACRouter;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -629,7 +650,7 @@
 			};
 			name = Debug;
 		};
-		BBEE20FE574C67B552C10142CCF6FF51 /* Debug */ = {
+		EADB5E5CE61757F06B37E60FB71F3B2D /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 510A07C6E55ABC20AB85F394BEBF3924 /* ACRouter.xcconfig */;
 			buildSettings = {
@@ -637,7 +658,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -650,17 +671,16 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/ACRouter/ACRouter.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = ACRouter;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Debug;
+			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
@@ -692,11 +712,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F8941359BE03088F4CA4259FDDD9586B /* Build configuration list for PBXNativeTarget "ACRouter" */ = {
+		62C6841F4F02092ABB8BF7D136136803 /* Build configuration list for PBXNativeTarget "ACRouter" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				BBEE20FE574C67B552C10142CCF6FF51 /* Debug */,
-				6B724EC6AF2816C280C27E7481D5B537 /* Release */,
+				4B5728F41258BBABB6A07FDBE43C803C /* Debug */,
+				EADB5E5CE61757F06B37E60FB71F3B2D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

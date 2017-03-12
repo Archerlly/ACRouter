@@ -22,7 +22,7 @@ pod "ACRouter"
 
 ## Author
 
-260732891@qq.com, 2302693080@qq.com
+2302693080@qq.com
 
 ## License
 
