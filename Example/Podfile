@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'ACRouter_Example' do
+  pod 'ACRouter', :path => '../'
+
+  target 'ACRouter_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end

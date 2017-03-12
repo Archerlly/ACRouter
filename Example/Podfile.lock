@@ -1,0 +1,16 @@
+PODS:
+  - ACRouter (0.1.0)
+
+DEPENDENCIES:
+  - ACRouter (from `../`)
+
+EXTERNAL SOURCES:
+  ACRouter:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  ACRouter: 63992d9d1cc490466a9aebf74a770c77a65dbddc
+
+PODFILE CHECKSUM: 1d17d5408f4aa771b803dda1dbe5b6794af4366f
+
+COCOAPODS: 1.2.0
