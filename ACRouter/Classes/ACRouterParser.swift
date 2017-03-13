@@ -5,17 +5,17 @@
 //  Created by SnowCheng on 10/03/2017.
 //  Copyright © 2017 Archerlly. All rights reserved.
 
-import UIKit
+import Foundation
 
 protocol ACRouterParser {
     
     typealias ParserResult = (paths: [String], querys: [String: AnyObject])
-    //不做转义
+    //不做百分号转义
     static func parser(_ url: URL) -> ParserResult
     static func parserSheme(_ url: URL) -> String
     static func parserPaths(_ url: URL) -> [String]
     static func parserQuerys(_ url: URL) -> [String: AnyObject]
-    //做转义
+    //做百分号转义
     static func parser(_ urlString: String) -> ParserResult
     static func parserSheme(_ urlString: String) -> String
     static func parserPaths(_ urlString: String) -> [String]
@@ -114,7 +114,7 @@ extension ACRouterParser {
         
         guard let items = components.queryItems,
             items.count > 0 else {
-            print("\(components.string ?? ""): query item count equal to zero")
+            print("query item count equal to zero: \(components.string ?? "")")
             return [String: String]()
         }
         
@@ -150,12 +150,53 @@ extension ACRouterParser {
 
 
 extension String {
-    func ac_dropFirst(_ count: Int) -> String {
+    public func ac_dropFirst(_ count: Int) -> String {
         return self.substring(from: self.index(self.startIndex, offsetBy: count))
     }
     
-    func ac_dropLast(_ count: Int) -> String {
+    public func ac_dropLast(_ count: Int) -> String {
         return self.substring(to: self.index(self.endIndex, offsetBy: -count))
+    }
+    
+    public func ac_matchClass() -> AnyClass?{
+        
+        if  var appName = Bundle.main.object(forInfoDictionaryKey: "CFBundleName") as? String {
+            
+            if appName == "" {
+                appName = ((Bundle.main.bundleIdentifier!).characters.split{$0 == "."}.map { String($0) }).last ?? ""
+            }
+            
+            var clsStr = self
+            
+            if !clsStr.contains("\(appName)."){
+                clsStr = appName + "." + clsStr
+            }
+            
+            let strArr = clsStr.components(separatedBy: ".")
+            
+            var className = ""
+            
+            let num = strArr.count
+            
+            if num > 2 || strArr.contains(appName) {
+                var nameStringM = "_TtC" + String(repeating: "C", count: num - 2)
+                
+                for (_, s): (Int, String) in strArr.enumerated(){
+                    
+                    nameStringM += "\(s.characters.count)\(s)"
+                }
+                
+                className = nameStringM
+                
+            } else {
+                
+                className = clsStr
+            }
+            
+            return NSClassFromString(className)
+        }
+        
+        return nil;
     }
     
 }

@@ -9,19 +9,28 @@
 import UIKit
 import ACRouter
 
-class testViewController: UIViewController {
+class testViewController: UIViewController, ACRouterable {
     
-    class func register() {
-        //AA://bb/cc/:p1
-        ACRouter.addRouter("AA://bb/cc/:p1", priority: 0) { (info) -> AnyObject in
-            print(info)
-            return testViewController() as AnyObject
+    static func registerAction(info: [String : AnyObject]) -> AnyObject {
+        
+        let newInstance = testViewController()
+        let infoString = info.map { "\($0) : \($1)" }.joined(separator: "\n")
+        newInstance.infoLabel.text = infoString
+        newInstance.infoLabel.sizeToFit()
+        newInstance.infoLabel.center = newInstance.view.center
+        
+        if let bgColor = info["bgColor"] as? UIColor {
+            newInstance.view.backgroundColor = bgColor
         }
+        
+        return newInstance
     }
     
-    override func viewDidLoad() {
-        view.backgroundColor = UIColor.red
-
-    }
+    lazy var infoLabel: UILabel = {
+        let infoLabel = UILabel()
+        infoLabel.numberOfLines = 0
+        self.view.addSubview(infoLabel)
+        return infoLabel
+    }()
     
 }

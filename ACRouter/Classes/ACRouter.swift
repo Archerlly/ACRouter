@@ -6,11 +6,11 @@
 //  Copyright © 2017 Archerlly. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
-class ACRouter: ACRouterParser {
+public class ACRouter: ACRouterParser {
 // MARK: - Constants
-    typealias RouteResponse = (pattern: ACRouterPattern?, querys: [String: AnyObject])
+    public typealias RouteResponse = (pattern: ACRouterPattern?, querys: [String: AnyObject])
     
 // MARK: - Private property
     private var patterns = [ACRouterPattern]()
@@ -18,27 +18,11 @@ class ACRouter: ACRouterParser {
 // MARK: - Public  property
     static let shareInstance = ACRouter()
     
-// MARK: - Convenience method
-    class func addRouter(_ patternString: String, priority: uint = 0, handle: @escaping ACRouterPattern.HandleBlock) {
-        shareInstance.addRouter(patternString, priority: priority, handle: handle)
-    }
-    
-    class func removeRouter(_ patternString: String) {
-        shareInstance.removeRouter(patternString)
-    }
-    
-    class func canOpenUrl(_ urlString: String) -> Bool {
-        return shareInstance.canOpenUrl(urlString)
-    }
-    
-    class func requestUrl(_ urlString: String, userInfo: [String: AnyObject] = [String: AnyObject]()) -> RouteResponse {
-        return shareInstance.requestUrl(urlString, userInfo: userInfo)
-    }
-    
 // MARK: - Public method
     func addRouter(_ patternString: String, priority: uint = 0, handle: @escaping ACRouterPattern.HandleBlock) {
         let pattern = ACRouterPattern.init(patternString, priority: priority, handle: handle)
         patterns.append(pattern)
+        patterns.sort { $0.priority > $1.priority }
     }
  
     func removeRouter(_ patternString: String) {

@@ -16,6 +16,9 @@
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
 		C18061991E7543FF0048691A /* testViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18061971E7543FF0048691A /* testViewController.swift */; };
 		C180619A1E7543FF0048691A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18061981E7543FF0048691A /* ViewController.swift */; };
+		C1D276211E7685B200CAEDF3 /* RouterManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D276201E7685B200CAEDF3 /* RouterManger.swift */; };
+		C1D276231E76995300CAEDF3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D276221E76995300CAEDF3 /* LoginViewController.swift */; };
+		C1D276251E76996400CAEDF3 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D276241E76996400CAEDF3 /* ProfileViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +49,9 @@
 		B684A8AF5CF4C1838AD0D57B /* Pods-ACRouter_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ACRouter_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-ACRouter_Example/Pods-ACRouter_Example.release.xcconfig"; sourceTree = "<group>"; };
 		C18061971E7543FF0048691A /* testViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = testViewController.swift; sourceTree = "<group>"; };
 		C18061981E7543FF0048691A /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C1D276201E7685B200CAEDF3 /* RouterManger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouterManger.swift; sourceTree = "<group>"; };
+		C1D276221E76995300CAEDF3 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		C1D276241E76996400CAEDF3 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		D2C9C6338E7B5AC3B9AF9F5C /* Pods-ACRouter_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ACRouter_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ACRouter_Example/Pods-ACRouter_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		DF785E93804875892231F216 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		E1369B2FB4AFBF6D6C8D9F57 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
@@ -96,8 +102,11 @@
 			isa = PBXGroup;
 			children = (
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
-				C18061971E7543FF0048691A /* testViewController.swift */,
 				C18061981E7543FF0048691A /* ViewController.swift */,
+				C1D276201E7685B200CAEDF3 /* RouterManger.swift */,
+				C1D276221E76995300CAEDF3 /* LoginViewController.swift */,
+				C1D276241E76996400CAEDF3 /* ProfileViewController.swift */,
+				C18061971E7543FF0048691A /* testViewController.swift */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
@@ -364,8 +373,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C1D276251E76996400CAEDF3 /* ProfileViewController.swift in Sources */,
+				C1D276211E7685B200CAEDF3 /* RouterManger.swift in Sources */,
 				C180619A1E7543FF0048691A /* ViewController.swift in Sources */,
 				C18061991E7543FF0048691A /* testViewController.swift in Sources */,
+				C1D276231E76995300CAEDF3 /* LoginViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -501,6 +513,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = ACRouter/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
@@ -515,6 +528,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = ACRouter/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";

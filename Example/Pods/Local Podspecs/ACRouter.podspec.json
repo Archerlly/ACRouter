@@ -2,21 +2,21 @@
   "name": "ACRouter",
   "version": "0.1.0",
   "summary": "A short description of ACRouter.",
-  "description": "TODO: Add long description of the pod here.",
-  "homepage": "https://github.com/260732891@qq.com/ACRouter",
+  "homepage": "https://github.com/Archerlly/ACRouter",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
   },
   "authors": {
-    "260732891@qq.com": "2302693080@qq.com"
+    "Archerlly": "2302693080@qq.com"
   },
   "source": {
-    "git": "https://github.com/260732891@qq.com/ACRouter.git",
+    "git": "https://github.com/Archerlly/ACRouter.git",
     "tag": "0.1.0"
   },
   "platforms": {
     "ios": "8.0"
   },
-  "source_files": "ACRouter/Classes/**/*"
+  "source_files": "ACRouter/Classes/**/*",
+  "requires_arc": true
 }

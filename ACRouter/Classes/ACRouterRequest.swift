@@ -6,7 +6,7 @@
 //  Copyright © 2017 Archerlly. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
 class ACRouterRequest: ACRouterParser {
     

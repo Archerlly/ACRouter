@@ -13,23 +13,18 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        testViewController.register()
+        
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    @IBAction func userProfileAction(_ sender: Any) {
+        ACRouter.openUrl(localRouterable.login(username: "Archerlly", password: "hehehe").requiredUrl)
     }
 
-    
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        //AA://bb/cc/:p1
-        let info = ["demo": "testInfo",
-                    "p1"  : "hahah"]
+    @IBAction func passObjectAction(_ sender: Any) {
+        let params = ["demo": "testInfo", "p1"  : "value1"]
+        let url = ACRouter.generate("AA://bb/cc/:p1", params: params, jumpType: ACRouter.ACJumpType.modal)
         
-        let url = ACRouter.generate("AA://bb/cc/:p1", userInfo: info, jumpType: .modal)
-        ACRouter.openUrl(url)
-        
+        ACRouter.openUrl(url, userInfo: ["bgColor": UIColor.gray])
     }
 
 }

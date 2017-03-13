@@ -6,21 +6,21 @@
 //  Copyright © 2017 Archerlly. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
 extension ACRouter {
 // MARK: - Constants
     static let ACJumpTypeKey = "ACJumpTypeKey"
-    enum ACJumpType: String {
+    public enum ACJumpType: String {
         case modal = "ACJumpTypeModal"
         case represent = "ACJumpTypeRepresent"
     }
 
 // MARK: - Convenience method
-    class func generate(_ patternString: String, userInfo: [String: String] = [String: String](), jumpType: ACJumpType) -> String {
+    public class func generate(_ patternString: String, params: [String: String] = [String: String](), jumpType: ACJumpType) -> String {
         
         var urlString = patternString
-        var querys = userInfo
+        var querys = params
         
         let paths = ACRouter.parserPaths(patternString)
         paths
@@ -41,7 +41,7 @@ extension ACRouter {
 
     
 // MARK: - Public method
-    class func openUrl(_ urlString: String, userInfo: [String: AnyObject] = [String: AnyObject]()) {
+    public class func openUrl(_ urlString: String, userInfo: [String: AnyObject] = [String: AnyObject]()) {
         
         let responce = ACRouter.requestUrl(urlString, userInfo: userInfo)
         let querys = responce.querys

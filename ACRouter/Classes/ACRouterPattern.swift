@@ -6,11 +6,11 @@
 //  Copyright © 2017 Archerlly. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
-class ACRouterPattern: ACRouterParser {
+public class ACRouterPattern: ACRouterParser {
 
-    typealias HandleBlock = ([String: AnyObject]) -> AnyObject
+    public typealias HandleBlock = ([String: AnyObject]) -> AnyObject
     static let PatternPlaceHolder = "~AC~"
     
     var patternString: String
