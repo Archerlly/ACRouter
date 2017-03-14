@@ -13,18 +13,16 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
     }
 
     @IBAction func userProfileAction(_ sender: Any) {
-        ACRouter.openUrl(localRouterable.login(username: "Archerlly", password: "hehehe").requiredUrl)
+        ACRouter.openURL(localRouterable.login(username: "Archerlly", password: "hehehe").requiredURL)
     }
 
     @IBAction func passObjectAction(_ sender: Any) {
         let params = ["demo": "testInfo", "p1"  : "value1"]
         let url = ACRouter.generate("AA://bb/cc/:p1", params: params, jumpType: ACRouter.ACJumpType.modal)
-        
-        ACRouter.openUrl(url, userInfo: ["bgColor": UIColor.gray])
+        ACRouter.openURL(url, userInfo: ["bgColor": UIColor.gray])
     }
 
 }

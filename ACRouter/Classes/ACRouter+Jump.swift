@@ -8,7 +8,10 @@
 
 import Foundation
 
+
+//extension of viewcontroller jump for ACRouter
 extension ACRouter {
+    
 // MARK: - Constants
     static let ACJumpTypeKey = "ACJumpTypeKey"
     public enum ACJumpType: String {
@@ -39,11 +42,10 @@ extension ACRouter {
         return urlString + "?" + queryString
     }
 
-    
 // MARK: - Public method
-    public class func openUrl(_ urlString: String, userInfo: [String: AnyObject] = [String: AnyObject]()) {
+    public class func openURL(_ urlString: String, userInfo: [String: AnyObject] = [String: AnyObject]()) {
         
-        let responce = ACRouter.requestUrl(urlString, userInfo: userInfo)
+        let responce = ACRouter.requestURL(urlString, userInfo: userInfo)
         let querys = responce.querys
         
         guard
@@ -54,14 +56,14 @@ extension ACRouter {
         
         switch jumpType {
         case .modal:
-            jumpUrl_modal(responce)
+            jumpURL_modal(responce)
         case .represent:
-            jumpUrl_present(responce)
+            jumpURL_present(responce)
         }
         
     }
     
-    class func jumpUrl_modal(_ response: RouteResponse) {
+    class func jumpURL_modal(_ response: RouteResponse) {
         let instance = response.pattern?.handle(response.querys)
         guard let vc = instance as? UIViewController else {
             return
@@ -69,7 +71,7 @@ extension ACRouter {
         ac_getTopViewController(nil)?.navigationController?.pushViewController(vc, animated: true)
     }
     
-    class func jumpUrl_present(_ response: RouteResponse) {
+    class func jumpURL_present(_ response: RouteResponse) {
         let instance = response.pattern?.handle(response.querys)
         guard let vc = instance as? UIViewController else {
             return

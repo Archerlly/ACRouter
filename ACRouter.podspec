@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
   s.name             = 'ACRouter'
   s.version          = '0.1.0'
-  s.summary          = 'A short description of ACRouter.'
+  s.summary          = 'A simple router for swift'
   s.homepage         = 'https://github.com/Archerlly/ACRouter'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'Archerlly' => '2302693080@qq.com' }

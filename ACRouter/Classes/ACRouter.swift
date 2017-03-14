@@ -29,16 +29,16 @@ public class ACRouter: ACRouterParser {
         patterns = patterns.filter{ $0.patternString != patternString }
     }
     
-    func canOpenUrl(_ urlString: String) -> Bool {
-        return ac_matchUrl(urlString).pattern != nil
+    func canOpenURL(_ urlString: String) -> Bool {
+        return ac_matchURL(urlString).pattern != nil
     }
     
-    func requestUrl(_ urlString: String, userInfo: [String: AnyObject] = [String: AnyObject]()) -> RouteResponse {
-        return ac_matchUrl(urlString, userInfo: userInfo)
+    func requestURL(_ urlString: String, userInfo: [String: AnyObject] = [String: AnyObject]()) -> RouteResponse {
+        return ac_matchURL(urlString, userInfo: userInfo)
     }
     
 // MARK: - Private method
-    private func ac_matchUrl(_ urlString: String, userInfo: [String: AnyObject] = [String: AnyObject]()) -> RouteResponse {
+    private func ac_matchURL(_ urlString: String, userInfo: [String: AnyObject] = [String: AnyObject]()) -> RouteResponse {
         let request = ACRouterRequest.init(urlString)
         var querys = request.querys
         var matched: ACRouterPattern?

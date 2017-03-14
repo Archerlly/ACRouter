@@ -35,8 +35,6 @@ class LoginViewController: UIViewController, ACRouterable {
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        ACRouter.openUrl(localRouterable.profile(content: "\(title ?? "")'shome").requiredUrl, userInfo: ["avatar": #imageLiteral(resourceName: "avatar")])
+        ACRouter.openURL(localRouterable.profile(content: "\(title ?? "")'shome").requiredURL, userInfo: ["avatar": #imageLiteral(resourceName: "avatar")])
     }
-
-
 }
