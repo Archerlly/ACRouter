@@ -13,7 +13,7 @@ class ACRouterRequest: ACRouterParser {
     var urlString: String
     var sheme: String
     var paths: [String]
-    var querys: [String: AnyObject]
+    var queries: [String: AnyObject]
     
     init(_ urlString: String) {
         self.urlString = urlString
@@ -21,7 +21,7 @@ class ACRouterRequest: ACRouterParser {
         
         let result = ACRouterRequest.parser(urlString)
         self.paths = result.paths
-        self.querys = result.querys
+        self.queries = result.queries
     }
     
 }

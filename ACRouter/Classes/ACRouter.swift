@@ -10,7 +10,7 @@ import Foundation
 
 public class ACRouter: ACRouterParser {
 // MARK: - Constants
-    public typealias RouteResponse = (pattern: ACRouterPattern?, querys: [String: AnyObject])
+    public typealias RouteResponse = (pattern: ACRouterPattern?, queries: [String: AnyObject])
     
 // MARK: - Private property
     private var patterns = [ACRouterPattern]()
@@ -40,7 +40,7 @@ public class ACRouter: ACRouterParser {
 // MARK: - Private method
     private func ac_matchURL(_ urlString: String, userInfo: [String: AnyObject] = [String: AnyObject]()) -> RouteResponse {
         let request = ACRouterRequest.init(urlString)
-        var querys = request.querys
+        var queries = request.queries
         var matched: ACRouterPattern?
         
         //先过滤掉scheme, 与path个数不匹配的
@@ -58,8 +58,8 @@ public class ACRouter: ACRouterParser {
             let matchString = requestPaths.joined(separator: "/")
             if matchString == pattern.matchString {
                 matched = pattern
-                querys.ac_combine(userInfo)
-                querys.ac_combine(currentPathQuery)
+                queries.ac_combine(userInfo)
+                queries.ac_combine(currentPathQuery)
                 break
             }
         }
@@ -70,6 +70,6 @@ public class ACRouter: ACRouterParser {
             return (nil, [String: AnyObject]())
         }
         
-        return (currentPattern, querys)
+        return (currentPattern, queries)
     }
 }

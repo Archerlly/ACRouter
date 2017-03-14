@@ -9,7 +9,7 @@ import Foundation
 
 protocol ACRouterParser {
     
-    typealias ParserResult = (paths: [String], querys: [String: AnyObject])
+    typealias ParserResult = (paths: [String], queries: [String: AnyObject])
     //不做百分号转义
     static func parser(_ url: URL) -> ParserResult
     static func parserSheme(_ url: URL) -> String
@@ -45,7 +45,7 @@ extension ACRouterParser {
     
     static func parserQuerys(_ url: URL) -> [String: AnyObject] {
         guard let components = URLComponents(url: url, resolvingAgainstBaseURL: true) else {
-            print("url parser querys error")
+            print("url parser queries error")
             return [String: AnyObject]()
         }
         let query = ac_parserQuery(components)
@@ -54,8 +54,8 @@ extension ACRouterParser {
     
     static func parser(_ urlString: String) -> ParserResult {
         let paths = parserPaths(urlString)
-        let querys = parserQuerys(urlString)
-        return (paths, querys)
+        let queries = parserQuerys(urlString)
+        return (paths, queries)
     }
     
     static func parserSheme(_ urlString: String) -> String {
@@ -78,15 +78,15 @@ extension ACRouterParser {
     }
     
     static func parserQuerys(_ urlString: String) -> [String: AnyObject] {
-        var querys = [String: AnyObject]()
+        var queries = [String: AnyObject]()
         
         urlString.components(separatedBy: "#").forEach { componentString in
             if let url = ac_checkInvaild(componentString) {
                 let result = parserQuerys(url)
-                querys.ac_combine(result)
+                queries.ac_combine(result)
             }
         }
-        return querys
+        return queries
     }
     
     ///解析Path (paths include the host)
@@ -118,16 +118,16 @@ extension ACRouterParser {
             return [String: String]()
         }
         
-        var querys = [String: String]()
+        var queries = [String: String]()
         items.forEach { (item) in
             if let value = item.value {
-                querys[item.name] = value
+                queries[item.name] = value
             } else {
                 print("\(components.string ?? ""): query name = \(item.name)")
             }
         }
         
-        return querys
+        return queries
     }
     
     /// 检查URL

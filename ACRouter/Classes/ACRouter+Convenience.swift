@@ -67,7 +67,7 @@ public extension ACRouter {
     /// - Parameters:
     ///   - urlString: real request urlstring
     ///   - userInfo: custom userInfo, could contain Object
-    /// - Returns: response for request, contain pattern and querys
+    /// - Returns: response for request, contain pattern and queries
     public class func requestURL(_ urlString: String, userInfo: [String: AnyObject] = [String: AnyObject]()) -> RouteResponse {
         return shareInstance.requestURL(urlString, userInfo: userInfo)
     }

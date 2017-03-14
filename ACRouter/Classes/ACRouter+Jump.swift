@@ -23,22 +23,22 @@ extension ACRouter {
     public class func generate(_ patternString: String, params: [String: String] = [String: String](), jumpType: ACJumpType) -> String {
         
         var urlString = patternString
-        var querys = params
+        var queries = params
         
         let paths = ACRouter.parserPaths(patternString)
         paths
             .filter{$0.contains(":")}
             .forEach { conponent in
                 let key = conponent.ac_dropFirst(1)
-                if let value = querys[key] ,
+                if let value = queries[key] ,
                     let range = urlString.range(of: conponent) {
                     urlString.replaceSubrange(range, with: value)
-                    querys.removeValue(forKey: key)
+                    queries.removeValue(forKey: key)
                 }
             }
-        querys[ACJumpTypeKey] = jumpType.rawValue
+        queries[ACJumpTypeKey] = jumpType.rawValue
         
-        let queryString = querys.map{ "\($0.key)=\($0.value)" }.joined(separator: "&")
+        let queryString = queries.map{ "\($0.key)=\($0.value)" }.joined(separator: "&")
         return urlString + "?" + queryString
     }
 
@@ -46,10 +46,10 @@ extension ACRouter {
     public class func openURL(_ urlString: String, userInfo: [String: AnyObject] = [String: AnyObject]()) {
         
         let responce = ACRouter.requestURL(urlString, userInfo: userInfo)
-        let querys = responce.querys
+        let queries = responce.queries
         
         guard
-            let typeString = querys[ACJumpTypeKey] as? String,
+            let typeString = queries[ACJumpTypeKey] as? String,
             let jumpType = ACJumpType.init(rawValue: typeString) else {
             return
         }
@@ -64,7 +64,7 @@ extension ACRouter {
     }
     
     class func jumpURL_modal(_ response: RouteResponse) {
-        let instance = response.pattern?.handle(response.querys)
+        let instance = response.pattern?.handle(response.queries)
         guard let vc = instance as? UIViewController else {
             return
         }
@@ -72,7 +72,7 @@ extension ACRouter {
     }
     
     class func jumpURL_present(_ response: RouteResponse) {
-        let instance = response.pattern?.handle(response.querys)
+        let instance = response.pattern?.handle(response.queries)
         guard let vc = instance as? UIViewController else {
             return
         }
