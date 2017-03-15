@@ -11,34 +11,35 @@ A simple router for swift
 
 ## Installation
 
-ACRouter is available through [CocoaPods](http://cocoapods.org). To install
-it, simply add the following line to your Podfile:
-
 ```ruby
 pod "ACRouter"
 ```
 
-## fast use
+## How To Use
 
 1. CustomViewController inherit ACRouterable, and implement the  func of registerAction.
 ``` swift
 class CustomViewController: UIViewController, ACRouterable {
-static func registerAction(info: [String : AnyObject]) -> AnyObject {
-let newInstance = LoginViewController()
-if let title = info["username"] as? String {
-newInstance.title = title
-}
-return newInstance
-}
+    static func registerAction(info: [String : AnyObject]) -> AnyObject {
+        let newInstance = LoginViewController()
+        if let title = info["username"] as? String {
+            newInstance.title = title
+        }
+        return newInstance
+    }
 }
 ```
 2. RegisterRouter for your CustomViewController
-`ACRouter.addRouter("AA://bb/cc/:p1", classString: "CustomViewController")`
+``` swift
+ACRouter.addRouter("AA://bb/cc/:p1", classString: "CustomViewController")
+```
 
 3. OpenURL in you application
-`ACRouter.openURL("AA://bb/cc/content?value1=testInfo")`
+``` swift
+ACRouter.openURL("AA://bb/cc/content?value1=testInfo")
+```
 
-##Convenience
+## Convenience
 - Quickly add multiple router
 ``` swift
 let registerDict = ["AA://bb/cc/:p1" : "CustomViewControllerOne", "AA://ee/ff" : "CustomViewControllerTwo"]
@@ -58,15 +59,19 @@ canOpenURL(_ urlString: )
 removeRouter(_ patternString: )
 ```
 
-##Custom Use
+## Custom Use
 1. AddRouter
-`ACRouter.addRouter(patternString:  priority: handle: )`
+``` swift
+ACRouter.addRouter(patternString:  priority: handle: )
+```
 It will store pattern information, and sort by priority reverse order
 2. RequestRouter
-`ACRouter.requestURL(urlString: userInfo: )`
+``` swift
+ACRouter.requestURL(urlString: userInfo: )
+```
 Request the real urlString, and response the pattern information and the queries which contain the userInfo. if exist the same key, it will embed in array.
 
-##Todo list
+## Todo list
 - `openURL` not only support Viewcontroller jumping
 - Add Interceptor for router
 - Add `openURL` failed action

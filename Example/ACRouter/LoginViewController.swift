@@ -11,7 +11,7 @@ import ACRouter
 
 class LoginViewController: UIViewController, ACRouterable {
     
-    static func registerAction(info: [String : AnyObject]) -> AnyObject {
+    class func registerAction(info: [String : AnyObject]) -> AnyObject {
         
         let newInstance = LoginViewController()
         
