@@ -19,6 +19,7 @@ public extension ACRouter {
         }
     }
     
+    
     /// convienience addrouter with className
     ///
     /// - Parameters:
@@ -42,6 +43,17 @@ public extension ACRouter {
     ///   - handle: block of refister URL
     public class func addRouter(_ patternString: String, priority: uint = 0, handle: @escaping ACRouterPattern.HandleBlock) {
         shareInstance.addRouter(patternString, priority: priority, handle: handle)
+    }
+    
+    
+    /// addRouter
+    ///
+    /// - Parameters:
+    ///   - whiteList: whiteList for intercept
+    ///   - priority: match priority, sort by inverse order
+    ///   - handle: block of interception
+    public class func addInterceptor(_ whiteList: [String] = [String](), priority: uint = 0,  handle: @escaping ACRouterInterceptor.InterceptorHandleBlock) {
+        shareInstance.addInterceptor(whiteList, priority: priority, handle: handle)
     }
     
     
@@ -71,4 +83,5 @@ public extension ACRouter {
     public class func requestURL(_ urlString: String, userInfo: [String: AnyObject] = [String: AnyObject]()) -> RouteResponse {
         return shareInstance.requestURL(urlString, userInfo: userInfo)
     }
+    
 }

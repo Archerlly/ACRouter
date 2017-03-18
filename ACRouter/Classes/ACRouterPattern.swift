@@ -10,7 +10,7 @@ import Foundation
 
 public class ACRouterPattern: ACRouterParser {
 
-    public typealias HandleBlock = ([String: AnyObject]) -> AnyObject
+    public typealias HandleBlock = ([String: AnyObject]) -> AnyObject?
     static let PatternPlaceHolder = "~AC~"
     
     var patternString: String
@@ -21,8 +21,10 @@ public class ACRouterPattern: ACRouterParser {
     var matchString: String
     var paramsMatchDict: [String: Int]
     
-    
-    init(_ string: String, priority: uint = 0, handle: @escaping HandleBlock) {
+    init(_ string: String,
+         priority: uint,
+         handle: @escaping HandleBlock) {
+        
         self.patternString = string
         self.priority = priority
         self.handle = handle

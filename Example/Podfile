@@ -4,7 +4,8 @@ target 'ACRouter_Example' do
   pod 'ACRouter', :path => '../'
 
   target 'ACRouter_Tests' do
-    inherit! :search_paths
+      pod 'ACRouter', :path => '../'
+      inherit! :search_paths
 
     
   end

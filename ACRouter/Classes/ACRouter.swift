@@ -10,19 +10,36 @@ import Foundation
 
 public class ACRouter: ACRouterParser {
 // MARK: - Constants
+    public typealias FailedHandleBlock = ([String: AnyObject]) -> Void
     public typealias RouteResponse = (pattern: ACRouterPattern?, queries: [String: AnyObject])
     
 // MARK: - Private property
     private var patterns = [ACRouterPattern]()
+    
+    private var interceptors = [ACRouterInterceptor]()
+    
+    private var relocationHandle: FailedHandleBlock?
+    
+    private var matchFailedHandle: FailedHandleBlock?
 
 // MARK: - Public  property
     static let shareInstance = ACRouter()
     
 // MARK: - Public method
-    func addRouter(_ patternString: String, priority: uint = 0, handle: @escaping ACRouterPattern.HandleBlock) {
+    func addRouter(_ patternString: String,
+                   priority: uint = 0,
+                   handle: @escaping ACRouterPattern.HandleBlock) {
         let pattern = ACRouterPattern.init(patternString, priority: priority, handle: handle)
         patterns.append(pattern)
         patterns.sort { $0.priority > $1.priority }
+    }
+    
+    func addInterceptor(_ whiteList: [String] = [String](),
+                        priority: uint = 0,
+                        handle: @escaping ACRouterInterceptor.InterceptorHandleBlock) {
+        let interceptor = ACRouterInterceptor.init(whiteList, priority: priority, handle: handle)
+        interceptors.append(interceptor)
+        interceptors.sort { $0.priority > $1.priority }
     }
  
     func removeRouter(_ patternString: String) {
@@ -70,6 +87,23 @@ public class ACRouter: ACRouterParser {
             return (nil, [String: AnyObject]())
         }
         
+        guard ac_intercept(currentPattern.patternString, queries: queries) else {
+            print("interceped: \(urlString)")
+            return (nil, [String: AnyObject]())
+        }
+        
         return (currentPattern, queries)
+    }
+    
+    //Intercep the request and return whether should continue
+    private func ac_intercept(_ matchedPatternString: String, queries: [String: AnyObject]) -> Bool {
+        
+        for interceptor in self.interceptors where !interceptor.whiteList.contains(matchedPatternString) {
+            if !interceptor.handle(queries) {
+                return false
+            }
+        }
+        
+        return true
     }
 }
