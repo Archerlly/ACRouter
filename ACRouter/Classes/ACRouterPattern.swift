@@ -22,7 +22,7 @@ public class ACRouterPattern: ACRouterParser {
     var paramsMatchDict: [String: Int]
     
     init(_ string: String,
-         priority: uint,
+         priority: uint = 0,
          handle: @escaping HandleBlock) {
         
         self.patternString = string

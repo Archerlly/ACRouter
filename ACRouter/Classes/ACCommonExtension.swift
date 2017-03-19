@@ -59,7 +59,7 @@ extension String {
     }
 }
 
-extension Dictionary where Value: AnyObject {
+extension Dictionary {
     mutating func ac_combine(_ dict: Dictionary) {
         var tem = self
         dict.forEach({ (key, value) in
