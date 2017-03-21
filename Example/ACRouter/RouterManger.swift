@@ -34,6 +34,19 @@ class RouterManger: NSObject {
      至于具体是使用Enum还是直接在项目中使用URL, 大家仁者见仁智者见智, 这里只是提供一个简单的demo, 并非最佳实例
      */
     
+    //测试拦截器
+    class func testAddInterceptor() {
+        let whitePatternString = localRouterable.login(username: "", password: "").patternString
+        let normal = "AA://bb/cc/:p1"
+        ACRouter.addInterceptor([whitePatternString, normal], priority: 0) { (info) -> Bool in
+            if AuthorizationCenter.default.isLogin {
+                return true
+            } else {
+                ACRouter.openURL(localRouterable.login(username: "", password: "").requiredURL)
+                return false
+            }
+        }
+    }
 }
 
 
@@ -48,8 +61,8 @@ extension localRouterable {
     
     var patternString: String {
         switch self {
-        case .login:    return "ACSheme://login/:username/:password"
-        case .profile:  return "ACSheme://profile"
+        case .login:    return "ACSheme://login"
+        case .profile:  return "ACSheme://profile/:content"
         }
     }
     
