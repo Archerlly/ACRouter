@@ -83,11 +83,11 @@ ACRouter.requestURL(urlString: userInfo: )
 ```
 
 ## Todo list
-- ~~Add `Interceptor` for router~~
-- ~~Add Test for router~~
-- Add `openURL` failed action
-- Add `relocation`
-- `openURL` not only support Viewcontroller jumping 
+- [X] ~~Add `Interceptor` for router~~
+- [X] ~~Add Test for router~~
+- [X] ~~Add `openURL` failed action~~
+- [ ] Add `relocation`
+- [ ] `openURL` not only support Viewcontroller jumping 
 
 ## 致谢
 [JLRoutes](https://github.com/joeldev/JLRoutes) 、

@@ -9,6 +9,9 @@
 
 A simple router for swift [中文文档](README_CN.md)
 
+## Process
+![sdf](./Images/process.jpg)
+
 ## Requirements
 
 swift3+ and xcode8+
@@ -75,15 +78,12 @@ ACRouter.requestURL(urlString: userInfo: )
 ```
 Request the real urlString, and response the pattern information and the queries which contain the userInfo. if exist the same key, it will embed in array.
 
-## Process
-![sdf](./Images/process.jpg)
-
 ## Todo list
-- ~~Add Interceptor for router~~
-- ~~Add Test for router~~
-- Add `openURL` failed action
-- Add `relocation`
-- `openURL` not only support Viewcontroller jumping 
+- [X] ~~Add Interceptor for router~~
+- [X] ~~Add Test for router~~
+- [X] ~~Add `openURL` failed action~~
+- [] Add `relocation`
+- [] `openURL` not only support Viewcontroller jumping 
 
 ## Author
 
