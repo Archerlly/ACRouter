@@ -19,6 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         RouterManger.testLoadLocalRegister()
         RouterManger.testLoadRomoteRegister()
         RouterManger.testAddInterceptor()
+        RouterManger.testAddFailedAction()
         
         return true
     }

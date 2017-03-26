@@ -15,7 +15,7 @@ class RouterManger: NSObject {
 
     //方式一: 网络下发 URL 与 viewcontroller 的映射关系
     class func testLoadRomoteRegister() {
-        let registerDict = ["AA://bb/cc/:p1" : "testViewController"]
+        let registerDict = ["AA://bb/cc/:p1" : "ErrorPageViewController"]
         ACRouter.addRouter(registerDict)
     }
     
@@ -45,6 +45,14 @@ class RouterManger: NSObject {
                 ACRouter.openURL(localRouterable.login(username: "", password: "").requiredURL)
                 return false
             }
+        }
+    }
+    
+    //添加跳转错误回调
+    class func testAddFailedAction() {
+        ACRouter.addGlobalMatchFailedHandel { (info) in
+            let url = ACRouter.generate("AA://bb/cc/error", jumpType: ACRouter.ACJumpType.modal)
+            ACRouter.openURL(url, userInfo: info)
         }
     }
 }

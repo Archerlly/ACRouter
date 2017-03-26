@@ -57,6 +57,18 @@ public extension ACRouter {
     }
     
     
+    /// addFailedHandel
+    public class func addGlobalMatchFailedHandel(_ handel: @escaping FailedHandleBlock) {
+        shareInstance.addGlobalMatchFailedHandel(handel)
+    }
+    
+    
+    /// addRelocation
+    public class func addRelocationHandle(_ handel: @escaping FailedHandleBlock) {
+        shareInstance.addRelocationHandle(handel)
+    }
+    
+    
     /// removeRouter by register urlstring
     ///
     /// - Parameter patternString: register urlstring
@@ -84,4 +96,12 @@ public extension ACRouter {
         return shareInstance.requestURL(urlString, userInfo: userInfo)
     }
     
+}
+
+
+// constants
+public extension ACRouter {
+    static let patternKey = "ac_patternKey"
+    static let requestURLKey = "ac_requestURLKey"
+    static let matchFailedKey = "ac_matchFailedKey"
 }

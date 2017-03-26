@@ -41,6 +41,14 @@ public class ACRouter: ACRouterParser {
         interceptors.append(interceptor)
         interceptors.sort { $0.priority > $1.priority }
     }
+    
+    func addGlobalMatchFailedHandel(_ handel: @escaping FailedHandleBlock) {
+        matchFailedHandle = handel
+    }
+    
+    func addRelocationHandle(_ handel: @escaping FailedHandleBlock) {
+        relocationHandle = handel
+    }
  
     func removeRouter(_ patternString: String) {
         patterns = patterns.filter{ $0.patternString != patternString }
@@ -75,6 +83,7 @@ public class ACRouter: ACRouterParser {
             let matchString = requestPaths.joined(separator: "/")
             if matchString == pattern.matchString {
                 matched = pattern
+                queries.ac_combine([ACRouter.requestURLKey  : urlString as AnyObject])
                 queries.ac_combine(userInfo)
                 queries.ac_combine(currentPathQuery)
                 break
@@ -83,6 +92,10 @@ public class ACRouter: ACRouterParser {
         
         guard let currentPattern = matched else {
             //没有匹配到
+            var info = [ACRouter.matchFailedKey  : urlString as AnyObject]
+            info.ac_combine(userInfo)
+            matchFailedHandle?(info)
+            
             print("not matched: \(urlString)")
             return (nil, [String: AnyObject]())
         }

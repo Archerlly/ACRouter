@@ -15,9 +15,9 @@
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
 		C17463A31E8154E800CD2F77 /* DemoTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C17463A21E8154E800CD2F77 /* DemoTableView.swift */; };
-		C18061991E7543FF0048691A /* testViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18061971E7543FF0048691A /* testViewController.swift */; };
-		C180619A1E7543FF0048691A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18061981E7543FF0048691A /* ViewController.swift */; };
 		C1B02BFB1E813A8100DE7182 /* AuthorizationCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B02BFA1E813A8100DE7182 /* AuthorizationCenter.swift */; };
+		C180619A1E7543FF0048691A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18061981E7543FF0048691A /* ViewController.swift */; };
+		C1935DA51E87883D0026878B /* ErrorPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1935DA41E87883D0026878B /* ErrorPageViewController.swift */; };
 		C1D276211E7685B200CAEDF3 /* RouterManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D276201E7685B200CAEDF3 /* RouterManger.swift */; };
 		C1D276231E76995300CAEDF3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D276221E76995300CAEDF3 /* LoginViewController.swift */; };
 		C1D276251E76996400CAEDF3 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D276241E76996400CAEDF3 /* ProfileViewController.swift */; };
@@ -49,10 +49,12 @@
 		945152B461F9515D15DCF28D /* Pods-ACRouter_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ACRouter_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ACRouter_Tests/Pods-ACRouter_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		AF84F8EF5FB921DCCA88AA21 /* Pods_ACRouter_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ACRouter_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B684A8AF5CF4C1838AD0D57B /* Pods-ACRouter_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ACRouter_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-ACRouter_Example/Pods-ACRouter_Example.release.xcconfig"; sourceTree = "<group>"; };
+
 		C17463A21E8154E800CD2F77 /* DemoTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoTableView.swift; sourceTree = "<group>"; };
-		C18061971E7543FF0048691A /* testViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = testViewController.swift; sourceTree = "<group>"; };
-		C18061981E7543FF0048691A /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		C1B02BFA1E813A8100DE7182 /* AuthorizationCenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthorizationCenter.swift; sourceTree = "<group>"; };
+		C18061981E7543FF0048691A /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C1935DA41E87883D0026878B /* ErrorPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorPageViewController.swift; sourceTree = "<group>"; };
+
 		C1D276201E7685B200CAEDF3 /* RouterManger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouterManger.swift; sourceTree = "<group>"; };
 		C1D276221E76995300CAEDF3 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		C1D276241E76996400CAEDF3 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -112,7 +114,7 @@
 				C1B02BFA1E813A8100DE7182 /* AuthorizationCenter.swift */,
 				C1D276221E76995300CAEDF3 /* LoginViewController.swift */,
 				C1D276241E76996400CAEDF3 /* ProfileViewController.swift */,
-				C18061971E7543FF0048691A /* testViewController.swift */,
+				C1935DA41E87883D0026878B /* ErrorPageViewController.swift */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
@@ -387,6 +389,7 @@
 				C1D276231E76995300CAEDF3 /* LoginViewController.swift in Sources */,
 				C17463A31E8154E800CD2F77 /* DemoTableView.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
+				C1935DA51E87883D0026878B /* ErrorPageViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
