@@ -82,8 +82,8 @@ Request the real urlString, and response the pattern information and the queries
 - [X] ~~Add Interceptor for router~~
 - [X] ~~Add Test for router~~
 - [X] ~~Add `openURL` failed action~~
-- [] Add `relocation`
-- [] `openURL` not only support Viewcontroller jumping 
+- [ ] Add `relocation`
+- [ ] `openURL` not only support Viewcontroller jumping 
 
 ## Author
 
