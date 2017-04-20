@@ -64,7 +64,7 @@ public extension ACRouter {
     
     
     /// addRelocation
-    public class func addRelocationHandle(_ handel: @escaping FailedHandleBlock) {
+    public class func addRelocationHandle(_ handel: @escaping RelocationHandleBlock) {
         shareInstance.addRelocationHandle(handel)
     }
     

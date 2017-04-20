@@ -9,9 +9,10 @@ class Tests: XCTestCase {
     let p3 = "AA://bb/cc/ee"
     let p4 = "AA://bb/:cc/dd"
     
+    let relocationUrl = "xx://xx/xx/xx"
 
     override func setUp() {
-         super.setUp()
+        super.setUp()
         
         ACRouter.addRouter(p1) {_ in return nil}
         ACRouter.addRouter(p2) {_ in return nil}
@@ -34,6 +35,13 @@ class Tests: XCTestCase {
             return true
         }
         
+        ACRouter.addRelocationHandle { (urlString) -> String? in
+            
+            let dict = [self.relocationUrl: self.p1]
+            return dict[urlString]
+            
+        }
+        
     }
     
     func testResponse() {
@@ -43,6 +51,15 @@ class Tests: XCTestCase {
         XCTAssertEqual(response.queries["cc"] as? String, "hello")
         XCTAssertEqual(response.queries["query"] as! [String], ["value1", "value2"])
         XCTAssertEqual(response.queries["newquery"]as? String, "newvalue")
+    }
+    
+    func testRelocation() {
+        
+        var response = ACRouter.requestURL("yy://yy/yy/yy")
+        XCTAssertNil(response.pattern)
+        
+        response = ACRouter.requestURL(relocationUrl)
+        XCTAssertNotNil(response.pattern)
     }
     
     func testIntercept() {

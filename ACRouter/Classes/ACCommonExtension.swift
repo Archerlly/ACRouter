@@ -10,6 +10,7 @@ import Foundation
 
 extension String {
     public func ac_dropFirst(_ count: Int) -> String {
+//        String.init(describing: utf8.dropFirst(count))
         return substring(from: index(startIndex, offsetBy: count))
     }
     
