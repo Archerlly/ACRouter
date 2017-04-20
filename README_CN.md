@@ -86,7 +86,7 @@ ACRouter.requestURL(urlString: userInfo: )
 - [X] ~~Add `Interceptor` for router~~
 - [X] ~~Add Test for router~~
 - [X] ~~Add `openURL` failed action~~
-- [ ] Add `relocation`
+- [X] Add `relocation`
 - [ ] `openURL` not only support Viewcontroller jumping 
 
 ## 致谢
