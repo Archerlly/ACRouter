@@ -45,37 +45,31 @@ extension ACRouter {
 // MARK: - Public method
     public class func openURL(_ urlString: String, userInfo: [String: AnyObject] = [String: AnyObject]()) {
         
-        let responce = ACRouter.requestURL(urlString, userInfo: userInfo)
-        let queries = responce.queries
+        let response = ACRouter.requestURL(urlString, userInfo: userInfo)
+        let instance = response.pattern?.handle(response.queries)
+        let queries = response.queries
         
         guard
             let typeString = queries[ACJumpTypeKey] as? String,
-            let jumpType = ACJumpType.init(rawValue: typeString) else {
+            let jumpType = ACJumpType.init(rawValue: typeString),
+            let vc = instance as? UIViewController else {
             return
         }
         
         switch jumpType {
         case .modal:
-            jumpURL_modal(responce)
+            modal(vc)
         case .represent:
-            jumpURL_present(responce)
+            push(vc)
         }
         
     }
     
-    class func jumpURL_modal(_ response: RouteResponse) {
-        let instance = response.pattern?.handle(response.queries)
-        guard let vc = instance as? UIViewController else {
-            return
-        }
+    class func push(_ vc: UIViewController) {
         ac_getTopViewController(nil)?.navigationController?.pushViewController(vc, animated: true)
     }
     
-    class func jumpURL_present(_ response: RouteResponse) {
-        let instance = response.pattern?.handle(response.queries)
-        guard let vc = instance as? UIViewController else {
-            return
-        }
+    class func modal(_ vc: UIViewController) {
         ac_getTopViewController(nil)?.present(vc, animated: true, completion: nil)
     }
 
