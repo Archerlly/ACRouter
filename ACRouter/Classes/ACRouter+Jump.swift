@@ -98,7 +98,7 @@ extension ACRouter {
             }
             
         default:
-            return topVC
+            return topVC.presentedViewController ?? topVC
         }
     }
 }
