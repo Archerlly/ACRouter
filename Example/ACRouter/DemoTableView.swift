@@ -48,15 +48,16 @@ class DemoTableView: UITableView, UITableViewDataSource, UITableViewDelegate {
         
         switch indexPath.row {
         case 0:
-            ACRouter.openURL(localRouterable.login(username: "Archerlly", password: "hehehe").requiredURL)
+            
+            ACRouter.openURL(LoginAPI("Archerlly", passWord: "hehehe").requiredURL)
             
         case 1:
             AuthorizationCenter.default.isLogin = true
-            ACRouter.openURL(localRouterable.profile(content: "My's home").requiredURL, userInfo: ["avatar": #imageLiteral(resourceName: "avatar")])
+            ACRouter.openURL(ProfileAPI("My's home").requiredURL, userInfo: ["avatar": #imageLiteral(resourceName: "avatar")])
             
         case 2:
             AuthorizationCenter.default.isLogin = false
-            ACRouter.openURL(localRouterable.profile(content: "My's home").requiredURL, userInfo: ["avatar": #imageLiteral(resourceName: "avatar")])
+            ACRouter.openURL(ProfileAPI("My's home").requiredURL, userInfo: ["avatar": #imageLiteral(resourceName: "avatar")])
             
         case 3:
             let params = ["demo": "testInfo", "p1"  : "value1"]

@@ -54,7 +54,7 @@ class LoginViewController: UIViewController, ACRouterable {
     
     @objc private func loginAction() {
         AuthorizationCenter.default.isLogin = true;
-        ACRouter.openURL(localRouterable.profile(content: "\(usernameTextFieled.text ?? "")'s home").requiredURL, userInfo: ["avatar": #imageLiteral(resourceName: "avatar")])
+        ACRouter.openURL(ProfileAPI("\(usernameTextFieled.text ?? "")'s home").requiredURL, userInfo: ["avatar": #imageLiteral(resourceName: "avatar")])
     }
 
 }

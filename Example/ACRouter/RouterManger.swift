@@ -21,10 +21,10 @@ class RouterManger: NSObject {
     
     //方式二: 本地固定映射关系 使用枚举便于使用
     class func testLoadLocalRegister() {
-        let login = localRouterable.login(username: "", password: "")
+        let login = LoginAPI()
         ACRouter.addRouter(login.patternString, classString: login.routerClass)
         
-        let profile = localRouterable.profile(content: "")
+        let profile = ProfileAPI()
         ACRouter.addRouter(profile.patternString, classString: profile.routerClass)
     }
 
@@ -36,13 +36,13 @@ class RouterManger: NSObject {
     
     //测试拦截器
     class func testAddInterceptor() {
-        let whitePatternString = localRouterable.login(username: "", password: "").patternString
+        let whitePatternString = LoginAPI().patternString
         let normal = "AA://bb/cc/:p1"
         ACRouter.addInterceptor([whitePatternString, normal], priority: 0) { (info) -> Bool in
             if AuthorizationCenter.default.isLogin {
                 return true
             } else {
-                ACRouter.openURL(localRouterable.login(username: "", password: "").requiredURL)
+                ACRouter.openURL(LoginAPI().requiredURL)
                 return false
             }
         }
@@ -60,47 +60,47 @@ class RouterManger: NSObject {
 
 
 //统一管理各模块的配置信息
-enum localRouterable: customRouterInfo {
-    case login(username: String, password: String)
-    case profile(content: String)
-}
-
-extension localRouterable {
-    
-    var patternString: String {
-        switch self {
-        case .login:    return "ACSheme://login"
-        case .profile:  return "ACSheme://profile/:content"
-        }
-    }
-    
-    var routerClass: String {
-        switch self {
-        case .login:    return "LoginViewController"
-        case .profile:  return "ProfileViewController"
-        }
-    }
-    
-    var params: [String : String] {
-        switch self {
-        case .login(let u, let p):
-            return ["username": u, "password": p]
-        case .profile(let c):
-            return ["content": c]
-        }
-    }
-    
-    var jumpType: ACRouter.ACJumpType {
-        switch self {
-        case .login:    return ACRouter.ACJumpType.modal
-        case .profile:  return ACRouter.ACJumpType.represent
-        }
-    }
-    
-    var requiredURL: String {
-        return ACRouter.generate(self.patternString, params: self.params, jumpType: self.jumpType)
-    }
-}
+//enum localRouterable: customRouterInfo {
+//    case login(username: String, password: String)
+//    case profile(content: String)
+//}
+//
+//extension localRouterable {
+//    
+//    var patternString: String {
+//        switch self {
+//        case .login:    return "ACSheme://login"
+//        case .profile:  return "ACSheme://profile/:content"
+//        }
+//    }
+//    
+//    var routerClass: String {
+//        switch self {
+//        case .login:    return "LoginViewController"
+//        case .profile:  return "ProfileViewController"
+//        }
+//    }
+//    
+//    var params: [String : String] {
+//        switch self {
+//        case .login(let u, let p):
+//            return ["username": u, "password": p]
+//        case .profile(let c):
+//            return ["content": c]
+//        }
+//    }
+//    
+//    var jumpType: ACRouter.ACJumpType {
+//        switch self {
+//        case .login:    return ACRouter.ACJumpType.modal
+//        case .profile:  return ACRouter.ACJumpType.represent
+//        }
+//    }
+//    
+//    var requiredURL: String {
+//        return ACRouter.generate(self.patternString, params: self.params, jumpType: self.jumpType)
+//    }
+//}
 
 
 protocol customRouterInfo {
@@ -109,4 +109,38 @@ protocol customRouterInfo {
     var requiredURL:    String { get }
     var params:         [String: String] { get }
     var jumpType:       ACRouter.ACJumpType { get }
+}
+
+extension customRouterInfo {
+    var requiredURL: String {
+        return ACRouter.generate(self.patternString, params: self.params, jumpType: self.jumpType)
+    }
+}
+
+class LoginAPI : customRouterInfo {
+    
+    var patternString = "ACSheme://login"
+    var routerClass = "LoginViewController"
+    var params: [String : String] { return ["username": name, "password": passWord] }
+    var jumpType: ACRouter.ACJumpType = .represent
+    
+    let name: String
+    let passWord: String
+    init(_ name: String = "", passWord: String = "") {
+        self.name = name
+        self.passWord = passWord
+    }
+}
+
+class ProfileAPI : customRouterInfo {
+    
+    var patternString = "ACSheme://profile/:content"
+    var routerClass = "ProfileViewController"
+    var params: [String : String] { return ["content": content] }
+    var jumpType: ACRouter.ACJumpType = .modal
+    
+    let content: String
+    init(_ content: String = "") {
+        self.content = content
+    }
 }
